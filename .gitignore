@@ -1,0 +1,5 @@
+__pycache__
+MANO_LEFT.pkl
+MANO_RIGHT.pkl
+*.pth
+*.pt

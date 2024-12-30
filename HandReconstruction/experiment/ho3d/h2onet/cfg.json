@@ -1,0 +1,52 @@
+{
+    "base": {
+        "exp_name": "ho3d.h2onet",
+        "model_dir": "experiment/ho3d/h2onet"
+    },
+    "data": {
+        "name": "HO3D",
+        "data_split": "train",
+        "eval_type": [
+            "test"
+        ],
+        "input_img_shape": [
+            128,
+            128
+        ]
+    },
+    "model": {
+        "name": "h2onet",
+        "pretrain": true
+    },
+    "loss": {
+        "w_gr": true,
+        "name": "h2onet"
+    },
+    "metric": {
+        "major_metric": "score"
+    },
+    "train": {
+        "num_epochs": 38,
+        "batch_size": 32,
+        "aug": true
+    },
+    "test": {
+        "batch_size": 48
+    },
+    "summary": {
+        "save_summary_steps": 50,
+        "save_latest_freq": 1,
+        "save_best_after": 0
+    },
+    "optimizer": {
+        "name": "adam",
+        "lr": 1e-4
+    },
+    "scheduler": {
+        "name": "step",
+        "milestones": [
+            30
+        ],
+        "gamma": 0.1
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "base": {
+        "exp_name": "dexycb_s0.handoccnet",
+        "model_dir": "experiment/dexycb_s0/handoccnet"
+    },
+    "data": {
+        "name": "DEX_YCB",
+        "eval_type": [
+            "test"
+        ],
+        "input_img_shape": [
+            256,
+            256
+        ]
+    },
+    "model": {
+        "name": "hand_occ_net",
+        "pretrain": true
+    },
+    "loss": {
+        "name": "hand_occ_net",
+        "lambda_mano_verts": 1e4,
+        "lambda_mano_joints": 1e4,
+        "lambda_mano_pose": 10,
+        "lambda_mano_shape": 0.1,
+        "lambda_joints_img": 100
+    },
+    "metric": {
+        "major_metric": "score"
+    },
+    "train": {
+        "num_epochs": 50,
+        "batch_size": 32,
+        "grad_norm_clip": 0.1,
+        "aug": true
+    },
+    "test": {
+        "batch_size": 48,
+        "num_workers": 20
+    },
+    "summary": {
+        "save_summary_steps": 50,
+        "save_latest_freq": 1,
+        "save_best_after": 0
+    },
+    "optimizer": {
+        "name": "adam",
+        "lr": 1e-4
+    },
+    "scheduler": {
+        "name": "step",
+        "milestones": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30,
+            32,
+            34,
+            36,
+            38,
+            40,
+            42,
+            44,
+            46,
+            48
+        ],
+        "gamma": 0.9
+    }
+}

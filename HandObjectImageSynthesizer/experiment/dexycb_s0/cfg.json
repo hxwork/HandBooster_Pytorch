@@ -1,0 +1,37 @@
+{
+    "base": {
+        "exp_name": "dexycb_s0",
+        "model_dir": "experiment/dexycb_s0"
+    },
+    "data": {
+        "image_size": 128,
+        "timesteps": 1000,
+        "dataset_name": "dexycb",
+        "data_split": "s0_train",
+        "version": 2
+    },
+    "model": {
+        "name": "cf_normal_cond_v2_wloss_grcond",
+        "beta_schedule": "linear"
+    },
+    "loss": {
+        "name": "l1",
+        "objective": "pred_x0"
+    },
+    "train": {
+        "num_steps": 700000,
+        "batch_size": 256,
+        "gradient_accumulate_every": 2,
+        "ema_decay": 0.995
+    },
+    "test": {
+        "num_samples": 16,
+        "sampling_timesteps": 1000
+    },
+    "optimizer": {
+        "lr": 8e-5
+    },
+    "summary": {
+        "save_and_sample_every": 1000
+    }
+}
