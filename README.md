@@ -73,11 +73,11 @@ We preprocess the simulated grasping poses to the required image condition in th
 
 We use the conditional diffsuion model to generate RGB images. We provide our model weights,
 
-| Dataset   | Model weight |
-| --------- | ------------ |
-| DexYCB s0 |              |
-| DexYCB s1 |              |
-| HO3D      |              |
+| Dataset   | Model weight                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------- |
+| DexYCB s0 | [checkpoint](https://drive.google.com/file/d/1W4fqJciAoBNLSr_9tsMQaWAwYV2uDfn3/view?usp=sharing) |
+| DexYCB s1 | \                                                                                             |
+| HO3D      | [checkpoint](https://drive.google.com/file/d/14ygJYviUR5nI8XFhjsN0s0z62wk440Xu/view?usp=sharing) |
 
 Here are the training and inference scripts,
 
@@ -93,11 +93,11 @@ accelerate launch HandObjectImageSynthesizer/inference_{dataset_name}.py --model
 
 Given the generated data, we mixed it with the original data to train different baselines. Cause the generated data is too large, we provide the boosted model weights,
 
-| Baseline   | DexYCB s0 | DexYCB s1 | HO3D |
-| ---------- | --------- | --------- | ---- |
-| HandOccNet |           |           |      |
-| MobRecon   |           |           |      |
-| H2ONet     |           |           |      |
+| Baseline   | DexYCB s0                                                                                     | DexYCB s1                                                                                     | HO3D                                                                                          |
+| ---------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| HandOccNet | [checkpoint](https://drive.google.com/file/d/1I-XrnoL9hnyznC0ylz2OTjyH7m-22jwQ/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/12IykKSYjgIbcdOgY7_Xv_cosp5LTpZEg/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/1xO5zEjYbHjXDPv0JHFP9p4W6XaFpmDNZ/view?usp=sharing) |
+| MobRecon   | [checkpoint](https://drive.google.com/file/d/1Letj3yg7TFHjRIqC7JJeWI9LeTAXTNW_/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/1sv366DnFt4DQ_aq9O4Loxx88HfC_zUi2/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/1NXGTMhURC0_xVnstUBXb43QUe0lChnpD/view?usp=sharing) |
+| H2ONet     | [checkpoint](https://drive.google.com/file/d/1Oo0ka6_GF3VaIGv-kn4uUs3IQFiKltvM/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/16secxZ2NMmZhc5o3uqggTMcdDBt_iJc5/view?usp=sharing) | [checkpoint](https://drive.google.com/file/d/1Hjeo2aPoyOFoEjxWrAsP_R7fDy0ncNT2/view?usp=sharing) |
 
 Here is the evaluation script,
 
